@@ -33,7 +33,10 @@ class _NewExpenseState extends State<NewExpense> {
           TextField(
             controller: _amountController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(label: Text("Amount")),
+            decoration: InputDecoration(
+              label: Text("Amount"),
+              prefixText: "\$",
+            ),
           ),
           Row(
             children: [
