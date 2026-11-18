@@ -5,21 +5,22 @@ import 'package:intl/intl.dart';
 const uuid = Uuid();
 final formatter = DateFormat.yMd();
 
+enum Category { food, travel, leisure, work }
 
-enum Category{food, travel, leisure, work}
 const categoryIcons = {
   Category.food: Icons.lunch_dining,
   Category.travel: Icons.flight_takeoff,
   Category.leisure: Icons.movie,
-  Category.work: Icons.work
+  Category.work: Icons.work,
 };
-class Expense{
-   Expense({
+
+class Expense {
+  Expense({
     required this.title,
     required this.amount,
     required this.date,
-    required this.category
-  }): id = uuid.v4();
+    required this.category,
+  }) : id = uuid.v4();
 
   final String id;
   final String title;
@@ -31,3 +32,4 @@ class Expense{
     return formatter.format(date);
   }
 }
+//flutter pub add intl
